@@ -1,5 +1,5 @@
 import * as Hapi from '@hapi/hapi';
-import UserRoutes from './api/users/routes';
+import UserRoutes from './api/donations/routes';
 import Logger from './helper/logger';
 
 export default class Router {
