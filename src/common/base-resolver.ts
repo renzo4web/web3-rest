@@ -15,6 +15,10 @@ export default class CrudResolver<T> {
     return await this.repository.updateById(id, update);
   }
 
+  public async getAllByName(destination: string): Promise<T> {
+    return await this.repository.getByDestination(destination);
+  }
+
   public async deleteOneById(id: string): Promise<any> {
     return await this.repository.deleteById(id);
   }

@@ -69,9 +69,9 @@ export default class UserRoutes implements IRoute {
         },
         {
           method: 'GET',
-          path: `/api/donations/{${controller.name}}`,
+          path: `/api/donations/destination={${controller.destination}}`,
           options: {
-            handler: controller.getById,
+            handler: controller.getByDestination,
             description:
               'Method that gets donations of an Organization/Destination.',
             tags: ['api', 'donations'],
