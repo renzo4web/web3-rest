@@ -7,6 +7,9 @@ export default {
         .integer()
         .required(),
       donor: Joi.string().required(),
+      email: Joi.string()
+        .email()
+        .required(),
       destination: Joi.string().required(),
     },
   },

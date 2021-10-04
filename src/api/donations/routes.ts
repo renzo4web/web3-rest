@@ -1,4 +1,5 @@
 import * as Hapi from '@hapi/hapi';
+import * as Path from 'path';
 import DonationController from './controller';
 import validate from './validate';
 import Logger from '../../helper/logger';
@@ -13,6 +14,13 @@ export default class UserRoutes implements IRoute {
       const controller = new DonationController('DONATION_ID');
 
       server.route([
+        {
+          method: 'GET',
+          path: '/{any*}',
+          handler: {
+            file: 'index.html',
+          },
+        },
         {
           method: 'POST',
           path: '/api/donations',

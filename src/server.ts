@@ -1,4 +1,5 @@
 import * as Hapi from '@hapi/hapi';
+import * as Path from 'path';
 import Logger from './helper/logger';
 import Plugin from './plugin';
 import Router from './router';
@@ -15,8 +16,13 @@ export default class Server {
 
       Server._instance = new Hapi.Server({
         port: process.env.PORT,
+        routes: {
+          files: {
+            relativeTo: Path.join(__dirname, 'client'),
+          },
+        },
       });
-      
+
       Server._instance.validator(require('@hapi/joi'));
 
       await Plugin.registerAll(Server._instance);
