@@ -4,6 +4,7 @@ import DonationController from './controller';
 import validate from './validate';
 import Logger from '../../helper/logger';
 import IRoute from '../../helper/route';
+import { pathToFileURL } from 'url';
 
 export default class UserRoutes implements IRoute {
   public async register(server: Hapi.Server): Promise<any> {
@@ -18,7 +19,9 @@ export default class UserRoutes implements IRoute {
           method: 'GET',
           path: '/{any*}',
           handler: {
-            file: 'index.html',
+            directory: {
+              path: Path.join(__dirname, '../../client'),
+            },
           },
         },
         {

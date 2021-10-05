@@ -5,12 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😀</text></svg>">
     <title>Blockchain Donations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <h1>Hello World</h1>
+    <h2>
+        Send and receive donations, with the security of the Ethereum network. Without intermediaries.
+    </h2>
+    
+    <main>
+    
+        <button>Connect Wallet</button>
+        <section class="main__donate">
+            <form>
+                <header>
+                    <h3>Donate</h3>
+                </header>
+                <label for="addressField">Address of receiver</label>
+                <input type="text" placeholder="0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7" id="addressField">
+                <label for="amountField">Amount</label>
+                <input type="number" placeholder="$0" id="amountField">
+                <label for="nameField">Name of Donor</label>
+                <input type="text" placeholder="John Doe" id="nameField">
+                <label for="commentField">Comment</label>
+                <textarea placeholder="Hi CJ …" id="commentField"></textarea>
+                <div class="float-right">
+                    <input type="checkbox" id="confirmField">
+                    <label class="label-inline" for="confirmField">Send a copy to yourself</label>
+                </div>
+                <input class="button-primary" type="submit" value="Send">
+            </form>
+        </section>
+    </main>
+
 
 </body>
 
